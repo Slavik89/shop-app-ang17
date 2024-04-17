@@ -1,30 +1,13 @@
-import { Component, OnChanges } from '@angular/core';
-
-interface Book {
-  title: string;
-  year: number;
-  author: string;
-  pages: number;
-  description: string;
-}
-
+import { Component } from '@angular/core';
+import { Book } from '../templates/book/book'
 
 @Component({
-  selector: 'app-book',
-  templateUrl: './book.component.html',
-  styleUrl: './book.component.scss'
+  selector: 'app-books',
+  templateUrl: './books.component.html',
+  styleUrl: './books.component.scss'
 })
-export class BookComponent {
+export class BooksComponent {
 
-
-
-  book = {
-    title: 'Voroshylovhrad',
-    year: 2010,
-    author: 'Serhiy Zhadan',
-    pages: 211,
-    description: 'social novel about life in Donbas'
-  }
   books: Book[];
 
   constructor() {
@@ -46,5 +29,5 @@ export class BookComponent {
   isJavaScript(book: Book): boolean {
     return book.title.indexOf('JavaScript') >= 0;
   }
-
+  
 }
